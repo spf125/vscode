@@ -145,7 +145,7 @@ export class DocumentSymbolRenderer implements ITreeRenderer<OutlineElement, Fuz
 			extraClasses,
 			title: localize('title.template', "{0} ({1})", element.symbol.name, symbolKindNames[element.symbol.kind])
 		};
-		if (this._configurationService.getValue(OutlineConfigKeys.icons) && this._configurationService.getValue('breadcrumbs.icons')) {
+		if (this._configurationService.getValue(OutlineConfigKeys.icons) && this._configurationService.getValue('breadcrumbs.symbols')) {
 			// add styles for the icons
 			template.iconClass.className = '';
 			template.iconClass.classList.add('outline-element-icon', 'inline', ...ThemeIcon.asClassNameArray(SymbolKinds.toIcon(element.symbol.kind)));

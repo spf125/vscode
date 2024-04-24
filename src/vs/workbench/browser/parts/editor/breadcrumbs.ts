@@ -72,6 +72,7 @@ export abstract class BreadcrumbsConfig<T> {
 	static readonly SymbolPath = BreadcrumbsConfig._stub<'on' | 'off' | 'last'>('breadcrumbs.symbolPath');
 	static readonly SymbolSortOrder = BreadcrumbsConfig._stub<'position' | 'name' | 'type'>('breadcrumbs.symbolSortOrder');
 	static readonly Icons = BreadcrumbsConfig._stub<boolean>('breadcrumbs.icons');
+	static readonly Symbols = BreadcrumbsConfig._stub<boolean>('breadcrumbs.symbols');
 	static readonly TitleScrollbarSizing = BreadcrumbsConfig._stub<IEditorPartOptions['titleScrollbarSizing']>('workbench.editor.titleScrollbarSizing');
 
 	static readonly FileExcludes = BreadcrumbsConfig._stub<glob.IExpression>('files.exclude');
@@ -161,6 +162,11 @@ Registry.as<IConfigurationRegistry>(Extensions.Configuration).registerConfigurat
 		},
 		'breadcrumbs.icons': {
 			description: localize('icons', "Render breadcrumb items with icons."),
+			type: 'boolean',
+			default: true
+		},
+		'breadcrumbs.symbols': {
+			description: localize('symbols', "Render breadcrumb items with symbols."),
 			type: 'boolean',
 			default: true
 		},
